@@ -2,11 +2,11 @@
 var margin = {top: 30, right: 20, bottom: 30, left: 20},
     width = 960 - margin.left - margin.right,
     barHeight = 20,
-    barWidth = width * .8;
+    barWidth = width * .9;
 
-var infoBarHeight = 20, infoBarWidth = barWidth * .05;
+var infoBarHeight = 20, infoBarWidth = barWidth * .09;  
 var classBarHeight = infoBarHeight, classBarWidth = barWidth * .05;
-var cumClBarHeight = infoBarHeight, cumClBarWidth = barWidth * .065;
+var cumClBarHeight = infoBarHeight, cumClBarWidth = barWidth * .11;
 
 var i = 0,
     duration = 400,
@@ -214,20 +214,28 @@ function update(source) {
 
   nodeEnter.append("text")
       .attr("dy", 3.5)
-      .attr("dx", xInfo + 18)
-      .attr("text-anchor", "middle")
-      .text(function(d) { return d.less});
+      .attr("dx", xInfo + 9)
+      .attr("text-anchor", "center")
+      .text(function(d) { 
+        if (d.name === "start") {
+          return;
+        } else if (d.type === "root") {
+          return 'root: ' + d.less;
+        } else {
+          return 'left-split: ' + d.less;
+        }
+      });
   nodeEnter.append("text")
       .attr("dy", 3.5)
-      .attr("dx", xInfo + 18 + infoBarWidth)
-      .attr("text-anchor", "middle")
+      .attr("dx", xInfo + 9 + infoBarWidth)
+      .attr("text-anchor", "center")
       .text(function(d) { 
-        if (d.type === "split") { return d.greater } });
+        if (d.type === "split") { return 'right-split: ' + d.greater } });
   
   ///////////////
   
   ///////// Class Bar
-  
+  /*
   xClass = 478;
   nodeEnter.append("rect")
       .attr("x", xClass)
@@ -315,11 +323,12 @@ function update(source) {
         .attr("dx", xClassText + 5*classBarWidth)
         .attr("text-anchor", "middle")
         .text(addTextClass5);                        
-  
+  */
+
   //////////////    
 
   ///////// Cum Class Bar
-  xCumCl = 165;
+  xCumCl = 250;
   nodeEnter.append("rect")
       .attr("x", xCumCl)
       .attr("y", -barHeight / 2)
@@ -376,37 +385,37 @@ function update(source) {
       .on("click", click);   
 
 
-  var xCumClText = xCumCl + 23;
+  var xCumClText = xCumCl + 13;
  
   nodeEnter.append("text")
         .attr("dy", 3.5)
         .attr("dx", xCumClText)
-        .attr("text-anchor", "middle")
+        .attr("text-anchor", "center")
         .text(addTextCumCl0);
   nodeEnter.append("text")
         .attr("dy", 3.5)
         .attr("dx", xCumClText + cumClBarWidth)
-        .attr("text-anchor", "middle")
+        .attr("text-anchor", "center")
         .text(addTextCumCl1);
   nodeEnter.append("text")
         .attr("dy", 3.5)
         .attr("dx", xCumClText + 2*cumClBarWidth)
-        .attr("text-anchor", "middle")
+        .attr("text-anchor", "center")
         .text(addTextCumCl2);
   nodeEnter.append("text")
         .attr("dy", 3.5)
         .attr("dx", xCumClText + 3*cumClBarWidth)
-        .attr("text-anchor", "middle")
+        .attr("text-anchor", "center")
         .text(addTextCumCl3);
   nodeEnter.append("text")
         .attr("dy", 3.5)
         .attr("dx", xCumClText + 4*cumClBarWidth)
-        .attr("text-anchor", "middle")
+        .attr("text-anchor", "center")
         .text(addTextCumCl4); 
   nodeEnter.append("text")
         .attr("dy", 3.5)
         .attr("dx", xCumClText + 5*cumClBarWidth)
-        .attr("text-anchor", "middle")
+        .attr("text-anchor", "center")
         .text(addTextCumCl5);                       
 
 
@@ -534,7 +543,7 @@ function strokeOpacityInfoBarRight(d) {
 function addText0(d, key) {
   if (d.type !== undefined){
     if (key === "cumCl") {
-      return d.cumCl.ook;
+      return 'class-1: ' + d.cumCl.ook;
     } else if (key === "classes") {
       return d.classes.ook
     } else {
@@ -547,7 +556,7 @@ function addText0(d, key) {
 function addText1(d, key) {
   if (d.type !== undefined){
     if (key === "cumCl") {
-      return d.cumCl.bpsk;
+      return 'class-2: ' + d.cumCl.bpsk;
     } else if (key === "classes") {
       return d.classes.bpsk;
     } else {
@@ -560,7 +569,7 @@ function addText1(d, key) {
 function addText2(d, key) {
   if (d.type !== undefined){
     if (key === "cumCl") {
-      return d.cumCl.oqpsk;
+      return 'class-3: ' + d.cumCl.oqpsk;
     } else if (key === "classes") {
       return d.classes.oqpsk;
     } else {
@@ -573,7 +582,7 @@ function addText2(d, key) {
 function addText3(d, key) {
   if (d.type !== undefined){
     if (key === "cumCl") {
-      return d.cumCl.bfskA;
+      return 'class-4: ' + d.cumCl.bfskA;
     } else if (key === "classes") {
       return d.classes.bfskA;
     } else {
@@ -586,7 +595,7 @@ function addText3(d, key) {
 function addText4(d, key) {
   if (d.type !== undefined){
     if (key === "cumCl") {
-      return d.cumCl.bfskB;
+      return 'class-5: ' + d.cumCl.bfskB;
     } else if (key === "classes") {
       return d.classes.bfskB;
     } else {
@@ -599,7 +608,7 @@ function addText4(d, key) {
 function addText5(d, key) {
   if (d.type !== undefined){
     if (key === "cumCl") {
-      return d.cumCl.bfskR2;
+      return 'class-6: ' + d.cumCl.bfskR2;
     } else if (key === "classes") {
       return d.classes.bfskR2;
     } else {
@@ -663,6 +672,8 @@ function colorCase(d, clickedCol, nonClickedCol) {
 
 function color(d) {
 	var out;
+  out = colorCase(d, "#BDBDBD", "#737373")
+  /*
   switch (d.depth) {
 		case 0:
       out = colorCase(d, "#BDBDBD", "#737373");
@@ -697,6 +708,7 @@ function color(d) {
 			out = colorCase(d, "#FFFF99", "#B15928");
 			break;			
 	}
+*/
 	return out
 }
 
