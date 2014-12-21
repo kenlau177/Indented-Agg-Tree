@@ -38,27 +38,27 @@ Components of the Visualization:
 #### Model fitting, information extraction, and aggregation:
 The files here are under python-code
 
-Data Input: datTrn.txt
-Data Output: aggTree_5_500.json
+- Data Input: datTrn.txt
+- Data Output: aggTree_5_500.json
 
-buildSkelTree.py - permutates all possible combinations of feature variables
-export_json.py - converts classification tree to JSON
-extractTrees.py - fits random forest and exports trees to JSON files
-parseRawTree.py - aggregation process
+- buildSkelTree.py : permutates all possible combinations of feature variables
+- export_json.py : converts classification tree to JSON
+- extractTrees.py : fits random forest and exports trees to JSON files
+- parseRawTree.py : aggregation process
 
 Makefile that runs the python scripts above:
-Makefile
+- Makefile
 
 Code used from blog post to extract classification tree info:
-https://gist.github.com/pprett/3813537
+- https://gist.github.com/pprett/3813537
 
 All libraries used in Python:
-os - I/O
-json
-sys - I/O
-numpy - array manipulation
-pandas - data frame manipulation
-sklearn - machine learning library
+- os - I/O
+- json
+- sys - I/O
+- numpy - array manipulation
+- pandas - data frame manipulation
+- sklearn - machine learning library
 
 #### Indented Aggregate Tree Visulization:
 D3, Javascript Files:
@@ -67,14 +67,14 @@ Input data: aggTree_5_500.json
 
 indexAgg.html - displays the visualization
 
-d3TreeAgg.js - d3 indented tree and additional encoding
-Mike Bostock's implenentation: http://bl.ocks.org/mbostock/1093025
-Colour Scale: http://synthesis.sbecker.net/articles/2012/07/16/learning-d3-part-6-scales-colors
+- d3TreeAgg.js - d3 indented tree and additional encoding
+- Mike Bostock's implenentation: http://bl.ocks.org/mbostock/1093025
+- Colour Scale: http://synthesis.sbecker.net/articles/2012/07/16/learning-d3-part-6-scales-colors
 
 All other libraries used:
-bootstrap
-jquery
-d3
+- bootstrap
+- jquery
+- d3
 
 
 
