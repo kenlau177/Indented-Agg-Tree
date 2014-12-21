@@ -29,5 +29,5 @@ Components of the Visualization:
 
 See the full [report](http://kenlau177.github.io/Indented-Agg-Tree/cpsc547-writeup-final2.pdf).
 
-
+See the [visualization](http://kenlau177.github.io/Indented-Agg-Tree/)
 
