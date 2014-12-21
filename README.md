@@ -27,7 +27,7 @@ Components of the Visualization:
 - Initially, 5 feature variables are shown on the screen. These features correspond to the root nodes of classification trees. Red color saturation was used to encode the number of feature appeareances of feature variables in the ensemble of trees. For example, m5 is the root node of 172 classification trees.
 - At the same level, the class prediction count distribution is color encoded with orange saturation. For example, for m5, this tells us the number class predictions made for all trees that had a root node of m5.
 
-[report](http://kenlau177.github.io/Indented-Agg-Tree/cpsc547-writeup-final2.pdf)
+See the full [report](http://kenlau177.github.io/Indented-Agg-Tree/cpsc547-writeup-final2.pdf).
 
 
 
