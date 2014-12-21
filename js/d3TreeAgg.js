@@ -2,11 +2,19 @@
 var margin = {top: 30, right: 20, bottom: 30, left: 20},
     width = 960 - margin.left - margin.right,
     barHeight = 20,
+<<<<<<< HEAD
     barWidth = width * .9;
 
 var infoBarHeight = 20, infoBarWidth = barWidth * .09;  
 var classBarHeight = infoBarHeight, classBarWidth = barWidth * .05;
 var cumClBarHeight = infoBarHeight, cumClBarWidth = barWidth * .11;
+=======
+    barWidth = width * .8;
+
+var infoBarHeight = 20, infoBarWidth = barWidth * .05;
+var classBarHeight = infoBarHeight, classBarWidth = barWidth * .05;
+var cumClBarHeight = infoBarHeight, cumClBarWidth = barWidth * .065;
+>>>>>>> master
 
 var i = 0,
     duration = 400,
@@ -214,6 +222,7 @@ function update(source) {
 
   nodeEnter.append("text")
       .attr("dy", 3.5)
+<<<<<<< HEAD
       .attr("dx", xInfo + 9)
       .attr("text-anchor", "center")
       .text(function(d) { 
@@ -231,11 +240,26 @@ function update(source) {
       .attr("text-anchor", "center")
       .text(function(d) { 
         if (d.type === "split") { return 'right-split: ' + d.greater } });
+=======
+      .attr("dx", xInfo + 18)
+      .attr("text-anchor", "middle")
+      .text(function(d) { return d.less});
+  nodeEnter.append("text")
+      .attr("dy", 3.5)
+      .attr("dx", xInfo + 18 + infoBarWidth)
+      .attr("text-anchor", "middle")
+      .text(function(d) { 
+        if (d.type === "split") { return d.greater } });
+>>>>>>> master
   
   ///////////////
   
   ///////// Class Bar
+<<<<<<< HEAD
   /*
+=======
+  
+>>>>>>> master
   xClass = 478;
   nodeEnter.append("rect")
       .attr("x", xClass)
@@ -323,12 +347,20 @@ function update(source) {
         .attr("dx", xClassText + 5*classBarWidth)
         .attr("text-anchor", "middle")
         .text(addTextClass5);                        
+<<<<<<< HEAD
   */
 
   //////////////    
 
   ///////// Cum Class Bar
   xCumCl = 250;
+=======
+  
+  //////////////    
+
+  ///////// Cum Class Bar
+  xCumCl = 165;
+>>>>>>> master
   nodeEnter.append("rect")
       .attr("x", xCumCl)
       .attr("y", -barHeight / 2)
@@ -385,37 +417,65 @@ function update(source) {
       .on("click", click);   
 
 
+<<<<<<< HEAD
   var xCumClText = xCumCl + 13;
+=======
+  var xCumClText = xCumCl + 23;
+>>>>>>> master
  
   nodeEnter.append("text")
         .attr("dy", 3.5)
         .attr("dx", xCumClText)
+<<<<<<< HEAD
         .attr("text-anchor", "center")
+=======
+        .attr("text-anchor", "middle")
+>>>>>>> master
         .text(addTextCumCl0);
   nodeEnter.append("text")
         .attr("dy", 3.5)
         .attr("dx", xCumClText + cumClBarWidth)
+<<<<<<< HEAD
         .attr("text-anchor", "center")
+=======
+        .attr("text-anchor", "middle")
+>>>>>>> master
         .text(addTextCumCl1);
   nodeEnter.append("text")
         .attr("dy", 3.5)
         .attr("dx", xCumClText + 2*cumClBarWidth)
+<<<<<<< HEAD
         .attr("text-anchor", "center")
+=======
+        .attr("text-anchor", "middle")
+>>>>>>> master
         .text(addTextCumCl2);
   nodeEnter.append("text")
         .attr("dy", 3.5)
         .attr("dx", xCumClText + 3*cumClBarWidth)
+<<<<<<< HEAD
         .attr("text-anchor", "center")
+=======
+        .attr("text-anchor", "middle")
+>>>>>>> master
         .text(addTextCumCl3);
   nodeEnter.append("text")
         .attr("dy", 3.5)
         .attr("dx", xCumClText + 4*cumClBarWidth)
+<<<<<<< HEAD
         .attr("text-anchor", "center")
+=======
+        .attr("text-anchor", "middle")
+>>>>>>> master
         .text(addTextCumCl4); 
   nodeEnter.append("text")
         .attr("dy", 3.5)
         .attr("dx", xCumClText + 5*cumClBarWidth)
+<<<<<<< HEAD
         .attr("text-anchor", "center")
+=======
+        .attr("text-anchor", "middle")
+>>>>>>> master
         .text(addTextCumCl5);                       
 
 
@@ -543,7 +603,11 @@ function strokeOpacityInfoBarRight(d) {
 function addText0(d, key) {
   if (d.type !== undefined){
     if (key === "cumCl") {
+<<<<<<< HEAD
       return 'class-1: ' + d.cumCl.ook;
+=======
+      return d.cumCl.ook;
+>>>>>>> master
     } else if (key === "classes") {
       return d.classes.ook
     } else {
@@ -556,7 +620,11 @@ function addText0(d, key) {
 function addText1(d, key) {
   if (d.type !== undefined){
     if (key === "cumCl") {
+<<<<<<< HEAD
       return 'class-2: ' + d.cumCl.bpsk;
+=======
+      return d.cumCl.bpsk;
+>>>>>>> master
     } else if (key === "classes") {
       return d.classes.bpsk;
     } else {
@@ -569,7 +637,11 @@ function addText1(d, key) {
 function addText2(d, key) {
   if (d.type !== undefined){
     if (key === "cumCl") {
+<<<<<<< HEAD
       return 'class-3: ' + d.cumCl.oqpsk;
+=======
+      return d.cumCl.oqpsk;
+>>>>>>> master
     } else if (key === "classes") {
       return d.classes.oqpsk;
     } else {
@@ -582,7 +654,11 @@ function addText2(d, key) {
 function addText3(d, key) {
   if (d.type !== undefined){
     if (key === "cumCl") {
+<<<<<<< HEAD
       return 'class-4: ' + d.cumCl.bfskA;
+=======
+      return d.cumCl.bfskA;
+>>>>>>> master
     } else if (key === "classes") {
       return d.classes.bfskA;
     } else {
@@ -595,7 +671,11 @@ function addText3(d, key) {
 function addText4(d, key) {
   if (d.type !== undefined){
     if (key === "cumCl") {
+<<<<<<< HEAD
       return 'class-5: ' + d.cumCl.bfskB;
+=======
+      return d.cumCl.bfskB;
+>>>>>>> master
     } else if (key === "classes") {
       return d.classes.bfskB;
     } else {
@@ -608,7 +688,11 @@ function addText4(d, key) {
 function addText5(d, key) {
   if (d.type !== undefined){
     if (key === "cumCl") {
+<<<<<<< HEAD
       return 'class-6: ' + d.cumCl.bfskR2;
+=======
+      return d.cumCl.bfskR2;
+>>>>>>> master
     } else if (key === "classes") {
       return d.classes.bfskR2;
     } else {
@@ -672,8 +756,11 @@ function colorCase(d, clickedCol, nonClickedCol) {
 
 function color(d) {
 	var out;
+<<<<<<< HEAD
   out = colorCase(d, "#BDBDBD", "#737373")
   /*
+=======
+>>>>>>> master
   switch (d.depth) {
 		case 0:
       out = colorCase(d, "#BDBDBD", "#737373");
@@ -708,7 +795,10 @@ function color(d) {
 			out = colorCase(d, "#FFFF99", "#B15928");
 			break;			
 	}
+<<<<<<< HEAD
 */
+=======
+>>>>>>> master
 	return out
 }
 
