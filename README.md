@@ -65,11 +65,11 @@ D3, Javascript Files:
 
 Input data: aggTree_5_500.json
 
-indexAgg.html - displays the visualization
+index.html - displays the visualization
 
 - d3TreeAgg.js - d3 indented tree and additional encoding
-- Mike Bostock's implenentation: http://bl.ocks.org/mbostock/1093025
-- Colour Scale: http://synthesis.sbecker.net/articles/2012/07/16/learning-d3-part-6-scales-colors
+--- Mike Bostock's implenentation: http://bl.ocks.org/mbostock/1093025
+--- Colour Scale: http://synthesis.sbecker.net/articles/2012/07/16/learning-d3-part-6-scales-colors
 
 All other libraries used:
 - bootstrap
